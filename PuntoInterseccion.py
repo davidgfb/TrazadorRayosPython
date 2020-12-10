@@ -16,7 +16,7 @@ d=d(p, origen)
 print(d,"debe ser [1,0,1]")
 """
 
-def t(normal, dPlano, origen, director):
+def t(normal, dPlano, origen, director): #puntoPlano=(0,0,0)?
     """3xarray,int-->float
     OBJ: Calcula el parametro t a partir de la normal y
          la d del plano y el origen y vector director del rayo
@@ -44,25 +44,11 @@ def pICompleto(normal, p, origen, dPlano):
 
 """
 #PROBADOR
-
 #plano
-normal=array([2,-3,1])
-d=1
 #rayo
-p=array([1,1,4])
-origen=array([0,1,3])
-
-d=d(p, origen)
-
-print(d,"debe ser [1,0,1]")
-
-t=t(normal, d, origen, director)
-
-print(t,"debe ser -1/3")
-
-pI=pI(t, origen, director)
-
-print(pI,"debe ser [-1/3, 1, 8/3]")
+print(d(array([1,1,4]), array([0,1,3])),"debe ser [1,0,1]")
+print(t(array([2,-3,1]), 1, array([0,1,3]), d(array([1,1,4]), array([0,1,3]))),"debe ser -1/3")
+print(pI(t(array([2,-3,1]), 1, array([0,1,3]), d(array([1,1,4]), array([0,1,3]))), array([0,1,3]), d(array([1,1,4]), array([0,1,3]))),"debe ser [-1/3, 1, 8/3]")
 """
 
 

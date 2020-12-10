@@ -12,7 +12,7 @@ def puntosCubo(lado, x=0):
     for z in L:
         for y in L:
             for x1 in L:
-                puntos.append([x+x1,y,z])
+                puntos.append([x1,y,z]) #x+x1
 
     return array(puntos)
 
@@ -27,7 +27,7 @@ def estaDentroEsfera(x1,y,z, r, x):
     """
     esta=False
 
-    if (x-x1)**2+y**2+z**2<=r**2: 
+    if (x1)**2+y**2+z**2<=r**2: #x-x1
         esta=True
 
     return esta
@@ -40,6 +40,19 @@ y=0
 #print(estaDentroEsfera(x,y,11, 10),"debe ser False")
 """
 
+def nPuntosSupEsfera(r):
+    R=range(-r,r)
+    puntos=[]
+    
+    for z in R:
+        for y in R:
+            for x in R:
+                if x**2+y**2+z**2<=r**2: #==
+                    puntos.append([x,y,z]) 
+
+    return array(puntos)
+
+
 #no volumetrico
 def estaSuperficieEsfera(x1,y,z, r, x):
     """4xint-->bool
@@ -47,7 +60,7 @@ def estaSuperficieEsfera(x1,y,z, r, x):
     """
     esta=False
 
-    if (x-x1)**2+y**2+z**2==r**2:
+    if (x1)**2+y**2+z**2==r**2: #x-x1
         esta=True
 
     return esta
