@@ -11,7 +11,7 @@ def cambiaColorFondo(sc, color):
 def dibujaPixel(sc, x, y, color):
     pixel(sc, x, y, color)
     #print("dibujo pixel en:",x,",",y)
-    update()
+    #update()
 
 """
 #colores

@@ -41,7 +41,7 @@ y=0
 """
 
 def nPuntosSupEsfera(r):
-    R=range(-r,r)
+    R=range(r)
     puntos=[]
     
     for z in R:
